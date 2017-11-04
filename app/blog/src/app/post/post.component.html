@@ -1,0 +1,20 @@
+    <input [(ngModel)]="post.profile" type="text" >
+    <input [(ngModel)]="post.task" type="text" >
+    <input [(ngModel)]="post.date" type="date" >
+    <button type="submit" (click)="setposts()">Subir</button>
+        <table>
+            <tr *ngFor="let task of photos">
+              <td>
+                {{task.profile}}
+              </td>
+              <td>
+                {{task.task}}
+              </td>
+              <td>
+                 <button type="submit" (click)="actualizar()">Actualizar</button>
+              </td>
+              <td>
+                  <button type="submit" (click="delete()")>Eliminar</button>
+              </td>
+            </tr>
+          </table>

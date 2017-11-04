@@ -1,13 +1,17 @@
-const mongooose = require('mongoose'),
-Schema = mongooose.Schema,
-collectionName = 'post';
 
-//Definicion del esquema de post
+const mongooose = require('mongoose'),
+    Schema = mongooose.Schema,
+    collectionName = 'Task';
+
+//Definicion del esquema de task
 var PostSchema = new Schema({
-user: String,
-post: String,
-date: { type: Date, default: Date.now },
-coment:{}  
+    task: String,
+    profile: String,
+    date: {
+        type: Date,
+        default: Date.now
+    },
+    status: Boolean, default:false
 });
 
 let PostModel = mongooose.model(collectionName, PostSchema);
