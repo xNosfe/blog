@@ -40,8 +40,8 @@ export class PostComponent implements OnInit {
       err => console.log(err)
     );
   }
-  delete() {
-    this._postService.delete().subscribe(
+  delete(id) {
+    this._postService.delete(id).subscribe(
       post => {this.getposts(); },
       err => console.log(err)
     );

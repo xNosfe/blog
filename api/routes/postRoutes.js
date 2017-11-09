@@ -54,7 +54,7 @@ route.delete('/:id', (req, res) => {
     PostModel.findByIdAndRemove(req.params.id, err => {
         if (err)
             res.status(404).send(err);
-        res.status(200).send('Borrado satisfactoriamente');
+        res.status(200).send({'msg':'Borrado satisfactoriamente'});
     });
 });
 

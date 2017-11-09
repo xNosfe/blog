@@ -38,8 +38,8 @@ export class PostService {
     .catch(this.handleError);
   }
 
-  delete(): Observable<any> {
-    return this._http.delete < Post[] > (this._url)
+  delete(id): Observable<any> {
+    return this._http.delete < any > (this._url + '/' + id)
     .do(data => console.log(data))
     .catch(this.handleError);
   }
