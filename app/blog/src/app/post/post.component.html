@@ -11,10 +11,13 @@
                 {{task.task}}
               </td>
               <td>
-                 <button type="submit" (click)="actualizar()">Actualizar</button>
+                 <button type="submit" (click)="update(task._id)">Actualizar</button>
               </td>
               <td>
                   <button type="submit" (click)="delete(task._id)">Eliminar</button>
+              </td>
+              <td>
+                <div *ngIf="task.status">Completado</div>
               </td>
             </tr>
           </table>

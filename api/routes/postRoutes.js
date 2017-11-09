@@ -37,15 +37,12 @@ route.put('/:id', (req, res) => {
         if (err) {
             res.status(404).send(err);
         }
-        if (req.body.task) doc.task = req.body.task;
-        if (req.body.profile) doc.profile = req.body.profile;
-        if (req.body.date) doc.date = req.body.date;
-        if (req.body.status) doc.status = req.body.status;
+        if (req.body.status) doc.status = true;
 
         doc.save((err, doc) => {
             if (err) res.status(404).send(err);
         });
-        res.status(200).send('Post actualizado');
+        res.status(200).send({msg: 'Post actualizado'});
     });
 });
 

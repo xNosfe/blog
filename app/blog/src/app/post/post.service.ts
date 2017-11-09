@@ -33,7 +33,7 @@ export class PostService {
   }
 
   update(task): Observable<any> {
-    return this._http.put < Post[] > (this._url, task)
+    return this._http.put < any > (this._url + '/' + task.id , task)
     .do(data => console.log(data))
     .catch(this.handleError);
   }

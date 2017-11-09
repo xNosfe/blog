@@ -34,8 +34,8 @@ export class PostComponent implements OnInit {
       err => console.log(err)
     );
   }
-  update() {
-    this._postService.update(this.post).subscribe(
+  update(id) {
+    this._postService.update({status: true, id: id}).subscribe(
       post => {this.getposts(); },
       err => console.log(err)
     );
